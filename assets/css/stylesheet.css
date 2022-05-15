@@ -63,3 +63,26 @@ li:hover {
     color: whitesmoke;
     border-color: black;
 }
+
+.endingScore {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#highScore {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+#goBack {
+    background-color: olive;
+    color: whitesmoke;
+    border-color: black;
+}
+
+#clear {
+    background-color: olive;
+    color: whitesmoke;
+    border-color: black;
+}
