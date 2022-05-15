@@ -10,7 +10,7 @@ var questions = [
         answer: "Parenthesis"
     },
     {
-        ask: "Commonlyused data types do NOT include:",
+        ask: "Commonly used data types do NOT include:",
         choice: ["Strings", "Booleans", "Alerts", "Numbers"],
         answer: "Alerts"
     },
@@ -142,7 +142,7 @@ function endGame() {
         var initials = initialInput.value;
 
         if (initials === "") {
-             alert("You must enter your initials.");
+             alert("Please enter your intials to access your highscores.");
              return;
         } else {
             var finalScore = {
