@@ -30,7 +30,7 @@ var choicesList = document.querySelector(".userChoices");
 var questionAsked = document.querySelector(".questions");
 var current = document.getElementById("currentTime");
 var interval;
-var timer = 75;
+var timer = 100;
 var index = 0;
 var score = 0;
 var incorrect = 10;
