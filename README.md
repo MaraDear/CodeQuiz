@@ -22,6 +22,7 @@ To install the Horiseon page, login to Github and got to github.com/MaraDear/Cod
 ## Usage
 
  Access the webpage to test your knowledge on coding terminology and practices.
+![CodeQuizScreenshot](https://user-images.githubusercontent.com/102925259/168490556-681a5cec-769e-48fc-bfce-f9ac223237bf.png)
 
 
 ## License
