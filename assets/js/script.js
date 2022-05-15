@@ -20,7 +20,7 @@ var questions = [
         answer: "All of the Above"
     },
     {
-        ask: "A very useful tool used during development and debugging for pringting content to the debugger is ______",
+        ask: "A very useful tool used during development and debugging for printing content to the debugger is ______",
         choice: ["Javascript", "Terminal/Bash", "Console Log", "For Loops"],
         answer: "Console Log"
     }
@@ -109,7 +109,7 @@ function endGame() {
     questionAsked.appendChild(endTitle);
 
     var numberRight = document.createElement("h3");
-    numberRight.textContent = "You answered" + score + " questions correctly.";
+    numberRight.textContent = "You answered " + score + " questions correctly.";
     questionAsked.appendChild(numberRight);
 
     var endingScore = document.createElement("p");
@@ -118,7 +118,7 @@ function endGame() {
     questionAsked.appendChild(endingScore);
     
     var initialLabel = document.createElement("label");
-    initialLabel.textContent = "Initials here:";
+    initialLabel.textContent = "Initials here: ";
     questionAsked.appendChild(initialLabel);
 
     var initialInput = document.createElement("input");
