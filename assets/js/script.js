@@ -35,8 +35,9 @@ var index = 0;
 var score = 0;
 var incorrect = 10;
 
-function start() {
-    current.textContent = "Timer:" + timer;
+
+function start(){
+    current.textContent = "Timer: " + timer;
     interval = setInterval(() => {
         timer--;
         current.textContent = "Timer: " + timer;
@@ -49,19 +50,21 @@ function start() {
             endGame();
         }
     }, 1000);
-
+   
     showQuestions(index);
 }
 
 function checkQuestion(userChose){
     var element = userChose.target.getAttribute("data-name");
     var correct = questions[index].answer;
+    
     var determined = document.createElement("div");
     determined.setAttribute("id", "determined");
         if(element == correct){
             ++score;
             determined.textContent = "Correct!";
             nextQuestion();
+            
         } else {
             timer = timer - incorrect;
             determined.textContent = "Wrong!";
@@ -69,6 +72,7 @@ function checkQuestion(userChose){
         }
         choicesList.appendChild(determined);
 }
+
 
 function showQuestions(question) {
     var question = questions[index];
@@ -107,16 +111,16 @@ function endGame() {
     var endTitle = document.createElement("h1");
     endTitle.textContent = "Game is Over";
     questionAsked.appendChild(endTitle);
-
+    
     var numberRight = document.createElement("h3");
-    numberRight.textContent = "You answered " + score + " questions correctly.";
+    numberRight.textContent = "You answered " + score + " questions correctly!";
     questionAsked.appendChild(numberRight);
 
     var endingScore = document.createElement("p");
     endingScore.textContent = "Score: " + timer;
     endingScore.setAttribute("class", "endingScore");
     questionAsked.appendChild(endingScore);
-    
+
     var initialLabel = document.createElement("label");
     initialLabel.textContent = "Initials here: ";
     questionAsked.appendChild(initialLabel);
@@ -124,22 +128,22 @@ function endGame() {
     var initialInput = document.createElement("input");
     initialInput.setAttribute("type", "text");
     initialInput.setAttribute("name", "Initials");
-    initialInput.setAttribute("placeholder", "Enter your initials here");
+    initialInput.setAttribute("placeholder", "Enter your initals here");
     questionAsked.appendChild(initialInput);
-
+    
     var submitBtn = document.createElement("button");
-    submitBtn.textContent = "Submit.";
+    submitBtn.textContent = "Submit!";
     submitBtn.setAttribute("type", "submit",);
-    submitBtn.setAttribute("value", "submit");
+    submitBtn.setAttribute("value", "Submit");
     submitBtn.setAttribute("class", "submitBtn");
     questionAsked.appendChild(submitBtn);
 
-    submitBtn.addEventListener("click", function() {
+    submitBtn.addEventListener("click", function () {
         var initials = initialInput.value;
 
         if (initials === "") {
-            alert("Please enter your intials to see your highscores.");
-            return;
+             alert("You must enter your initials.");
+             return;
         } else {
             var finalScore = {
                 initials: initials,
@@ -155,9 +159,8 @@ function endGame() {
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore)
-            window.location.replace("./highscores.html")
+            window.location.replace("./highscores.html");
         }
     })
 }
-
 document.getElementById("startButton").addEventListener("click", start);
